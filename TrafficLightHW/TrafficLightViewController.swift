@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrafficLightViewController.swift
 //  TrafficLightHW
 //
 //  Created by M I C H A E L on 16.03.2023.
@@ -30,11 +30,6 @@ class TrafficLightViewController: UIViewController {
     private let redLight = (on: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), off: #colorLiteral(red: 0.3, green: 0, blue: 0, alpha: 1))
     private let yellowLight = (on: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1), off: #colorLiteral(red: 0.3, green: 0.2958364945, blue: 0, alpha: 1))
     private let greenLight = (on: #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), off: #colorLiteral(red: 0, green: 0.3, blue: 0, alpha: 1))
-    
-/*
- Не стал использовать .alpha, так как при смене бэкграунда у супервью не
- будет эффекта затемнения
-*/
     
     
 // MARK: - Override Functions
