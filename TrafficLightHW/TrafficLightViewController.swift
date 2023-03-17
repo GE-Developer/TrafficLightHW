@@ -47,9 +47,11 @@ class TrafficLightViewController: UIViewController {
         greenLightView.backgroundColor = greenLight.off
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         
         startButton.layer.cornerRadius = startButton.frame.height / 3
+        startButton.titleLabel?.font = UIFont(name: "Avenir-Medium",
+                                              size: startButton.frame.height / 2)
         
         for lightView in [redLightView, yellowLightView, greenLightView] {
             lightView?.layer.cornerRadius = (lightView?.frame.height ?? 0) / 2
@@ -59,7 +61,7 @@ class TrafficLightViewController: UIViewController {
     
 // MARK: - IBActions
     
-    @IBAction func startButtonPressed(_ sender: UIButton) {
+    @IBAction func startButtonPressed() {
         
         turnOnTheNextLight()
         
