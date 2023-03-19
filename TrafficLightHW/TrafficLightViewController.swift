@@ -8,7 +8,6 @@
 import UIKit
 
 enum Light {
-    
     case red, yellow, green
 }
 
@@ -31,17 +30,14 @@ final class TrafficLightViewController: UIViewController {
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         redLightView.backgroundColor = redLight.off
         yellowLightView.backgroundColor = yellowLight.off
         greenLightView.backgroundColor = greenLight.off
     }
     
     override func viewDidLayoutSubviews() {
-        
         for lightView in [redLightView, yellowLightView, greenLightView] {
             lightView?.layer.cornerRadius = (lightView?.frame.height ?? 0) / 2
-            
         }
         
         startButton.layer.cornerRadius = startButton.frame.height / 3
@@ -51,11 +47,10 @@ final class TrafficLightViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func startButtonPressed() {
-        turnOnTheNextLight()
-        
         if startButton.titleLabel?.text == "START" {
             startButton.setTitle("NEXT", for: .normal)
         }
+        turnOnTheNextLight()
     }
     
     // MARK: - Private Methods
