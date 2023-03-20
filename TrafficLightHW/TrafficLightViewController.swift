@@ -30,27 +30,33 @@ final class TrafficLightViewController: UIViewController {
     // MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         redLightView.backgroundColor = redLight.off
         yellowLightView.backgroundColor = yellowLight.off
         greenLightView.backgroundColor = greenLight.off
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
+        startButton.layer.cornerRadius = startButton.frame.height / 3
+    
         for lightView in [redLightView, yellowLightView, greenLightView] {
             lightView?.layer.cornerRadius = (lightView?.frame.height ?? 0) / 2
         }
-        
-        startButton.layer.cornerRadius = startButton.frame.height / 3
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         startButton.titleLabel?.font = UIFont(name: "Avenir-Medium",
                                               size: startButton.frame.height / 2)
     }
-    
+
     // MARK: - IBActions
     @IBAction func startButtonPressed() {
+        
         if startButton.titleLabel?.text == "START" {
             startButton.setTitle("NEXT", for: .normal)
         }
         turnOnTheNextLight()
+        print("startButtonPressed - \(redLightView.layer.cornerRadius)")
     }
     
     // MARK: - Private Methods
