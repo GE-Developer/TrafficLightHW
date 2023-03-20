@@ -51,12 +51,11 @@ final class TrafficLightViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func startButtonPressed() {
+        turnOnTheNextLight()
         
         if startButton.titleLabel?.text == "START" {
             startButton.setTitle("NEXT", for: .normal)
         }
-        turnOnTheNextLight()
-        print("startButtonPressed - \(redLightView.layer.cornerRadius)")
     }
     
     // MARK: - Private Methods
